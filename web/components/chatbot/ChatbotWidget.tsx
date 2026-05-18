@@ -6,10 +6,10 @@ import { business } from "@/lib/business";
 type Msg = { role: "user" | "assistant"; content: string };
 
 const QUICK_REPLIES = [
-  "How much does Zoho Books cost?",
-  "How long does implementation take?",
-  "Book a discovery call",
-  "Do you handle UAE Corporate Tax?",
+  "What does Magistrum do?",
+  "How much does Zoho implementation cost?",
+  "Do you offer Zoho training?",
+  "Book a free discovery call",
 ];
 
 export function ChatbotWidget() {
@@ -19,7 +19,7 @@ export function ChatbotWidget() {
     {
       role: "assistant",
       content:
-        "Hi, I'm the Magistrum assistant. Ask me about Zoho implementation, UAE VAT and Corporate Tax setup, training programmes, or pricing. I can also book a free discovery call for you.",
+        "Hi! I'm the Magistrum assistant. Ask me about Zoho, training, pricing, or anything about how Magistrum works, and I can book you a free discovery call when you're ready.",
     },
   ]);
   const [input, setInput] = useState("");
