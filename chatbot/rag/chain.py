@@ -1,15 +1,17 @@
 """Compose KB context + system prompt + user msg into LLM messages.
 
-For demo/free-tier deployment: full KB inlined into system prompt (no vector
-retrieval). KB is ~42KB / ~10K tokens — well within Groq's context window.
+Uses a lightweight keyword retriever (see rag/retrieve.py) so only the
+2-4 most relevant KB chunks are sent per turn, instead of the full KB.
+This keeps each request well under Groq's free-tier 12K TPM cap and
+leaves room for a longer conversation history.
 """
 from pathlib import Path
-from rag.loader import load_kb
-from config import config
+from rag.retrieve import retrieve
 
 SYSTEM_PROMPT_PATH = Path(__file__).resolve().parent.parent / "SYSTEM-PROMPT.md"
 
-_kb_cache: str | None = None
+HISTORY_TURNS = 20  # last N messages of history sent with each request
+RETRIEVAL_TOP_K = 4  # number of KB chunks to inline per turn
 
 
 def load_system_prompt() -> str:
@@ -22,29 +24,27 @@ def load_system_prompt() -> str:
     )
 
 
-def get_kb_context() -> str:
-    global _kb_cache
-    if _kb_cache is not None:
-        return _kb_cache
-    chunks = load_kb(config.KB_PATH)
-    chunks.sort(key=lambda c: (c.get("priority", 3), c.get("rel_path", "")))
+def _format_chunks(chunks: list[dict]) -> str:
+    if not chunks:
+        return "(no relevant KB content found for this query)"
     blocks = [
-        f"[{c['rel_path']} · priority={c.get('priority', 3)}]\n{c['text']}"
+        f"[{c.get('rel_path', c.get('chunk_id', '?'))} · priority={c.get('priority', 3)}]\n{c['text']}"
         for c in chunks
     ]
-    _kb_cache = "\n\n".join(blocks) if blocks else "(no KB content found)"
-    return _kb_cache
+    return "\n\n".join(blocks)
 
 
 def build_messages(history: list[dict], user_msg: str) -> tuple[list[dict], list[dict]]:
-    """Returns (messages_for_llm, retrieved_chunks).
-
-    retrieved_chunks kept for API compatibility — always empty now.
-    """
-    system = load_system_prompt() + "\n\n--- KB CONTEXT ---\n" + get_kb_context()
+    """Returns (messages_for_llm, retrieved_chunks)."""
+    retrieved = retrieve(user_msg, history=history, top_k=RETRIEVAL_TOP_K)
+    system = (
+        load_system_prompt()
+        + "\n\n--- RELEVANT KB CONTEXT ---\n"
+        + _format_chunks(retrieved)
+    )
 
     messages = [{"role": "system", "content": system}]
-    for m in history[-6:]:
+    for m in history[-HISTORY_TURNS:]:
         messages.append({"role": m["role"], "content": m["content"]})
     messages.append({"role": "user", "content": user_msg})
-    return messages, []
+    return messages, retrieved
