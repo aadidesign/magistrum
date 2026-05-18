@@ -4,13 +4,9 @@ services:
     runtime: python
     plan: free
     region: frankfurt
-    buildCommand: pip install -r requirements.txt && python -m rag.ingest
+    buildCommand: pip install -r requirements.txt
     startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /health
-    disk:
-      name: chroma-data
-      mountPath: /opt/render/project/src/chroma
-      sizeGB: 1
     envVars:
       - key: LLM_PROVIDER
         value: groq
@@ -30,10 +26,6 @@ services:
         sync: false
       - key: KB_PATH
         value: ./kb
-      - key: CHROMA_PATH
-        value: /opt/render/project/src/chroma
-      - key: EMBEDDING_MODEL
-        value: sentence-transformers/all-MiniLM-L6-v2
       - key: SAMPLE_MODE
         value: "true"
       - key: ALLOWED_ORIGINS
