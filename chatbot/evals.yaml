@@ -1,0 +1,84 @@
+# Eval set for the Magistrum chatbot. Run with: python -m chatbot.eval
+# Each case has: question, expected_behaviour (a checklist), and optional must_contain / must_not_contain.
+
+cases:
+  # Service-specific factual (5)
+  - id: 1
+    question: "Do you implement Zoho Books?"
+    must_contain: ["Zoho Books"]
+    expected: "Confirms yes, offers timeline range and discovery call"
+
+  - id: 2
+    question: "How long does a Zoho CRM implementation take?"
+    must_contain: ["10", "21"]
+    must_not_contain: ["1 day", "weeks of months"]
+    expected: "States 10-21 working days, offers discovery"
+
+  - id: 3
+    question: "Is the Zoho Books certification recognised?"
+    must_contain: ["Authorised"]
+    expected: "Confirms Authorised Training Institute status"
+
+  - id: 4
+    question: "Do you handle Google Workspace to Zoho Workplace migration?"
+    must_contain: ["Workplace"]
+    expected: "Confirms yes, gives 5-10 day range"
+
+  - id: 5
+    question: "What's Zoho One and should I consider it?"
+    expected: "Explains full stack, suggests phased rollout, recommends discovery"
+
+  # Pricing deflection (3)
+  - id: 6
+    question: "How much will Zoho Books cost me exactly?"
+    must_contain: ["AED"]
+    must_not_contain: ["exactly AED"]
+    expected: "Gives range, offers fixed-scope quote after discovery"
+
+  - id: 7
+    question: "Do you have a price list I can download?"
+    expected: "Explains why no price list; offers discovery call"
+
+  - id: 8
+    question: "Can you give me the price for Zoho One in one number?"
+    must_contain: ["depends", "scope"]
+    expected: "Refuses single number, offers range + discovery"
+
+  # Area coverage (2)
+  - id: 9
+    question: "Do you work in Sharjah?"
+    must_contain: ["Sharjah"]
+    expected: "Confirms yes, mentions HFZA / SAIF Free Zones"
+
+  - id: 10
+    question: "Do you work in Riyadh, Saudi Arabia?"
+    expected: "Honest — UAE-based, can deliver remotely, India practice covers regional; offers to flag for consultant"
+
+  # Out-of-scope (2)
+  - id: 11
+    question: "What's the average UAE Corporate Tax rate for a free zone company?"
+    must_contain: ["adviser"]
+    expected: "Defers specific tax position to qualified adviser, offers to discuss setup"
+
+  - id: 12
+    question: "Can you help me with my Saudi Arabia VAT return?"
+    expected: "Honest — UAE-focused; would flag to consultant for an exception"
+
+  # Compliance (we CAN answer) (2)
+  - id: 13
+    question: "Is Zoho Books VAT compliant in the UAE?"
+    must_contain: ["VAT"]
+    expected: "Confirms yes, mentions tax-code config and FTA-compliant invoices"
+
+  - id: 14
+    question: "Will my data stay in the UAE?"
+    expected: "Explains Zoho's regional data residency, offers to confirm during discovery"
+
+  # Booking intent (1)
+  - id: 15
+    question: "Can I book a call with you for tomorrow afternoon?"
+    expected: "Triggers booking flow, asks for name first, will not commit a specific time"
+
+scoring:
+  # Auto-score against expectations. Aim for >= 13/15 pass.
+  required_pass: 13

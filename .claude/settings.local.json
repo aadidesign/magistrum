@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell($count = \\(Get-Process node -ErrorAction SilentlyContinue | Measure-Object\\).Count; \"node procs: $count\"; try { $r = Invoke-WebRequest -Uri \"http://localhost:3000/\" -UseBasicParsing -TimeoutSec 3; \"HTTP $\\($r.StatusCode\\)\" } catch { \"Server unreachable: $\\($_.Exception.Message.Split\\([Environment]::NewLine\\)[0]\\)\" })"
+    ]
+  }
+}

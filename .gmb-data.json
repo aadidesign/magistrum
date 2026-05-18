@@ -1,0 +1,138 @@
+{
+  "_source": "Playwright-scraped from public Google Maps profile (2026-05-18) + supplementary data from magistrum.net contact page + magistrum.in/about. Some fields ('full week hours', 'reviews', 'photo URLs') are limited because Google Maps unauth view truncates them.",
+  "_scraped_at": "2026-05-18",
+  "_scrape_method": "playwright headless chromium",
+  "name": "Magistrum Corpserve Solution LLC - Zoho Authorised Training & Implementation Partner",
+  "short_name": "Magistrum Corpserve Solutions LLC",
+  "trade_name": "Magistrum",
+  "parent_entity": "Magistrum Corpserve PVT LTD (India)",
+  "category": "Training center",
+  "category_secondary": "Zoho Authorised Training & Implementation Partner",
+  "niche_classification": "B2B SaaS implementation + corporate training (Zoho ecosystem)",
+  "rating": 5.0,
+  "rating_label_raw": "5.0 stars",
+  "review_count": 0,
+  "review_count_note": "Google does not show a count number; the Reviews tab is not present. Interpreted as 0 publicly visible reviews (a rating can exist with private/recent reviews not yet surfaced).",
+  "reviews": [],
+  "address": {
+    "raw": "DIP - 1, Bin Sougat Building - Unit No R05 - Dubai - United Arab Emirates",
+    "unit": "R05",
+    "building": "Bin Sougat Building",
+    "area": "Dubai Investment Park 1 (DIP - 1)",
+    "city": "Dubai",
+    "emirate": "Dubai",
+    "country": "United Arab Emirates",
+    "country_code": "AE",
+    "plus_code": "78CG+26 Dubai",
+    "formatted_single_line": "Unit R05, Bin Sougat Building, DIP-1, Dubai, UAE"
+  },
+  "coordinates": {
+    "lat": 25.2700863,
+    "lng": 55.3255872,
+    "note": "From the Maps URL params; this is a generic Dubai centroid Google used — the actual DIP-1 location is slightly different (~25.0, 55.18). Use the address text as the source of truth."
+  },
+  "phone": [
+    {"raw": "+971 58 899 1583", "e164": "+971588991583", "label": "primary_gmb", "source": "google_my_business"},
+    {"raw": "+971 52 523 6698", "e164": "+971525236698", "label": "secondary", "source": "magistrum.net/contact-us"},
+    {"raw": "+971 52 925 2076", "e164": "+971529252076", "label": "tertiary", "source": "magistrum.net/contact-us"}
+  ],
+  "phone_default_for_site": "+971588991583",
+  "email": [
+    {"address": "info@magistrum.net", "label": "general"},
+    {"address": "seema.krishna@magistrum.net", "label": "personal_lead_contact"}
+  ],
+  "website": "https://www.magistrum.in/",
+  "website_on_gmb_listing": "https://www.magistrum.in/",
+  "related_websites": [
+    {"url": "https://www.magistrum.in/", "entity": "Magistrum Corpserve PVT LTD (India)", "role": "primary_marketing"},
+    {"url": "https://magistrum.net/", "entity": "Magistrum Corpserve Solutions LLC (UAE)", "role": "uae_entity_site"}
+  ],
+  "hours_published_on_gmb": {
+    "Monday": "9:00 AM - 9:00 PM"
+  },
+  "hours_assumed_for_site": {
+    "Monday": "9:00 AM - 9:00 PM",
+    "Tuesday": "9:00 AM - 9:00 PM",
+    "Wednesday": "9:00 AM - 9:00 PM",
+    "Thursday": "9:00 AM - 9:00 PM",
+    "Friday": "9:00 AM - 9:00 PM",
+    "Saturday": "9:00 AM - 9:00 PM",
+    "Sunday": "Closed"
+  },
+  "hours_assumption_note": "Google publishes only Monday. Assumed Mon-Sat 9-9 based on UAE B2B norms (post-2022 weekend = Sat-Sun) and Monday being the published anchor. USER SHOULD CONFIRM ACTUAL HOURS before launch; conservative would be Mon-Fri 9-6.",
+  "service_areas": ["Dubai", "Sharjah", "Abu Dhabi", "Ajman", "All UAE", "GCC", "India (via parent entity)", "Global (remote)"],
+  "services": [
+    {"name": "Zoho Finance Suite Implementation", "category": "implementation", "tier": "core"},
+    {"name": "Zoho Books Setup, Customization & Migration", "category": "implementation", "tier": "core"},
+    {"name": "Zoho Invoice Setup", "category": "implementation"},
+    {"name": "Zoho Expense Setup", "category": "implementation"},
+    {"name": "Zoho Inventory Setup", "category": "implementation"},
+    {"name": "Zoho Payroll Setup", "category": "implementation"},
+    {"name": "Zoho CRM Implementation", "category": "implementation", "tier": "core"},
+    {"name": "Zoho Contracts Implementation", "category": "implementation"},
+    {"name": "Zoho Sign Setup", "category": "implementation"},
+    {"name": "Zoho Workplace Implementation", "category": "implementation"},
+    {"name": "Google Workspace to Zoho Workplace Migration", "category": "implementation", "trend_note": "Featured in their May 2026 owner post"},
+    {"name": "Data Migration from Legacy Systems", "category": "implementation"},
+    {"name": "Third-Party Integrations & API Work", "category": "implementation"},
+    {"name": "Ongoing Support & Optimization", "category": "support", "tier": "core"},
+    {"name": "Zoho Books Certification Training", "category": "training", "tier": "core"},
+    {"name": "Tally Prime Training & Certification", "category": "training"},
+    {"name": "HATS (Hands-on Accountancy Training with Spreadsheets)", "category": "training"},
+    {"name": "Office Automation Training", "category": "training"},
+    {"name": "GST Simulation Training", "category": "training"},
+    {"name": "SAP FICO Certification", "category": "training"}
+  ],
+  "owner_recent_post": {
+    "title": "Google Workspace vs Zoho Workplace — Which Platform Is Right for Your Business in 2026?",
+    "topic": "Comparing Google Workspace and Zoho Workplace for businesses in UAE/India/global markets",
+    "themes_emphasized": [
+      "Zoho Workplace implementation",
+      "Google Workspace to Zoho migration",
+      "Zoho CRM integration",
+      "Cloud accounting automation",
+      "Business process optimization",
+      "Staff training & onboarding",
+      "Digital transformation consulting"
+    ],
+    "posted": "2 days before scrape",
+    "useful_for": "blog content, chatbot KB, hero copy theme"
+  },
+  "description": "Magistrum Corpserve Solutions LLC is a Zoho Authorised Training & Implementation Partner serving SMEs and enterprises across the UAE, India, and global markets. The company operates two divisions: end-to-end Zoho ecosystem implementation (Finance Suite, CRM, Contracts, Sign, Workplace, integrations) for businesses, and authorised training & certification programs (Zoho Books, Tally Prime, HATS, SAP FICO) for individuals seeking accounting and ERP careers.",
+  "positioning_self_stated": "Your Trusted Zoho & Accounting Experts",
+  "mission_self_stated": "To empower both individuals and businesses with practical, in-demand skills and technology solutions required to succeed in today's digital economy.",
+  "credentials": [
+    "Zoho Authorised Training Institute (Zoho Finance Suite product training)",
+    "Authorised Tally Prime training center",
+    "Zoho trusted partner (specific tier — Authorised / Advanced / Premium — not stated on public profile; needs user confirmation)"
+  ],
+  "geographies_served": ["UAE (Dubai HQ, DIP-1)", "India (Mumbai)", "India (Palakkad, Kerala)", "Global remote"],
+  "unique_selling_points_observed": [
+    "Dual offer: business Zoho implementation + workforce certification training under one roof",
+    "Authorised partner status with both Zoho and Tally — dual-platform credibility",
+    "'100% Lifetime Job Assurance' on training programs (per magistrum.in)",
+    "Cross-border presence (India HQ + UAE LLC) — valuable for clients with operations on both sides of the Arabian Sea",
+    "Active content marketing (recent owner post on GMB about Zoho vs Google Workspace) — they’re publishing, but their website doesn’t showcase this depth of expertise"
+  ],
+  "social": {
+    "facebook": "https://www.facebook.com/profile.php?id=100084690573089",
+    "instagram": "https://www.instagram.com/magistrumservices",
+    "linkedin": "https://www.linkedin.com/company/magistrum-corpserve-solutions-llc-uae-pvt-ltd-india",
+    "youtube": null,
+    "x": null
+  },
+  "contact_form_fields_on_existing_site": [
+    "First Name", "Last Name", "Email", "Phone No", "Country", "Company", "How can we help you?"
+  ],
+  "photo_urls": [],
+  "photo_urls_note": "Limited-view Maps page exposes only 3 thumbnail URLs (googleusercontent placeholders). Real GMB photos accessible only with auth. Will use Unsplash + curated stock for hero/galleries; recommend user upload real DIP-1 office + team photos post-conversion.",
+  "qa": [],
+  "tabs_visible_on_gmb": ["Overview", "About"],
+  "_user_should_confirm_before_launch": [
+    "Full week hours (only Monday is published; the build assumes Mon-Sat 9-9, Sun closed)",
+    "Which phone number to feature as primary on the new site (+971 58 899 1583 from GMB vs +971 52 523 6698 from .net website)",
+    "Zoho partner tier (Authorised vs Advanced vs Premium — affects hero trust badge wording)",
+    "Specific UAE clients you have permission to name / logo (drives the social-proof strip)",
+    "DED trade licence number + VAT TRN (for footer compliance block)"
+  ]
+}

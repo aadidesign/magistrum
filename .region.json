@@ -1,0 +1,129 @@
+{
+  "_derived_from": ".gmb-data.json + GCC market knowledge",
+  "country": "United Arab Emirates",
+  "country_code": "AE",
+  "emirate": "Dubai",
+  "city": "Dubai",
+  "city_areas_relevant_to_b2b": [
+    "Business Bay", "DIFC", "Dubai Internet City", "Dubai Silicon Oasis",
+    "Deira", "Bur Dubai", "Jumeirah Lake Towers (JLT)", "Dubai Media City"
+  ],
+  "languages": {
+    "primary_site_language": "en-AE",
+    "primary_rationale": "B2B in Dubai defaults to English. Decision-makers and finance/ops teams operate in English across the GCC. Arabic is government-facing; ar-AE optional v2.",
+    "secondary_optional": "ar-AE",
+    "rtl_required_for_secondary": true,
+    "google_font_subsets_to_load": ["latin", "latin-ext"]
+  },
+  "currency": {
+    "code": "AED",
+    "symbol": "AED",
+    "symbol_position": "prefix",
+    "format_example": "AED 1,250.00",
+    "decimal_separator": ".",
+    "thousand_separator": ","
+  },
+  "phone_format": {
+    "country_code": "+971",
+    "national_example": "052 523 6698",
+    "international_example": "+971 52 523 6698",
+    "tel_link_example": "+971525236698"
+  },
+  "date_format": "DD MMM YYYY",
+  "date_example": "18 May 2026",
+  "time_format": "12h_with_AM_PM",
+  "address_format": "Street, Area, City, Emirate, UAE",
+  "timezone": "Asia/Dubai",
+  "timezone_offset": "+04:00",
+  "weekend": ["Saturday", "Sunday"],
+  "weekend_note": "UAE moved to Sat-Sun weekend in Jan 2022; Friday is a half-day in government but the private B2B sector now treats Mon-Fri as the work week.",
+  "business_hours_norm": "09:00 - 18:00 GST, Mon-Fri",
+
+  "regional_trust_signals_for_niche": [
+    "Zoho Authorised Partner badge (level: Advanced / Premium / Authorised Training — display whichever is held)",
+    "Zoho-issued partner ID / certification logo",
+    "Years as Authorised Partner",
+    "Client logos (UAE SMEs they have implemented for)",
+    "DED (Department of Economic Development) trade license number (LLC entity)",
+    "VAT registration number (TRN) — signals real FTA-registered business; reassures finance buyers",
+    "Knowledge of UAE VAT (5%), Corporate Tax (9% from Jun 2023), e-invoicing readiness — VERY important hooks for Zoho Books buyers",
+    "ESR / UBO / AML compliance familiarity — bonus for finance audience",
+    "DIFC / ADGM client experience (if any) — premium signal",
+    "ISO certification (if applicable)",
+    "LinkedIn presence with named consultants",
+    "GCC-region case studies"
+  ],
+
+  "regional_review_platforms": [
+    "Google (primary)",
+    "LinkedIn recommendations",
+    "Clutch.co (B2B services)",
+    "G2 (for SaaS-adjacent listings)",
+    "Zoho Marketplace partner page",
+    "TrustPilot (lower B2B weight in GCC)"
+  ],
+
+  "legal_compliance": {
+    "data_protection": "UAE Federal Decree-Law No. 45 of 2021 (PDPL) + DIFC Data Protection Law DIFC DPL 5/2020 if serving DIFC clients",
+    "cookie_consent": "PDPL-aligned consent banner required; opt-in for non-essential cookies. Plain English notice + Arabic link recommended.",
+    "marketing_email": "PDPL consent for marketing emails; double opt-in recommended for B2B drip",
+    "company_info_on_site": "LLC trade license number + VAT TRN should appear in footer (UAE business etiquette + builds trust)",
+    "claims_to_avoid": "Avoid '#1', 'guaranteed', or comparative claims naming competitors — UAE consumer protection guidance is conservative; B2B audiences are also skeptical of superlatives"
+  },
+
+  "common_b2b_payment_methods_in_uae": [
+    "Bank transfer (most common B2B)",
+    "Cheque (still very common in UAE for invoicing)",
+    "Credit card (less common B2B; common for training-program purchases)",
+    "Stripe / PayTabs / Telr for online (training payments)"
+  ],
+
+  "communication_channel_preferences_uae_b2b": {
+    "primary": "WhatsApp Business",
+    "primary_rationale": "WhatsApp is the de-facto B2B contact channel across the GCC. Almost every UAE SME founder/CFO/Ops manager replies on WhatsApp faster than email. WhatsApp click-to-chat with pre-filled message is essential.",
+    "secondary": "Email",
+    "tertiary": "Phone call (high-intent leads)",
+    "sms": "low usage for B2B",
+    "linkedin_inmail": "useful for cold outreach, low for inbound"
+  },
+
+  "regional_idioms_and_spelling": {
+    "spelling": "British English (UAE is BE-leaning: 'optimise', 'organisation', 'centre', 'specialised', 'authorised')",
+    "currency_written": "AED before number ('AED 5,000') or 'Dh 5,000' in casual copy; avoid 'dirhams' in formal B2B",
+    "phrases_native_to_uae_b2b": [
+      "InshaAllah used informally — avoid in marketing copy",
+      "'Free zone' / 'mainland' are common qualifiers when discussing client setup",
+      "'TRN' (Tax Registration Number) and 'VAT' are universally understood",
+      "Address language: 'office number, building name, street name, area, Dubai'"
+    ],
+    "avoid": [
+      "Excessively American superlatives ('crushing it', 'killer feature', 'world-class')",
+      "Calling weekend 'Fri-Sat' — outdated since 2022"
+    ]
+  },
+
+  "regional_directories_to_claim": [
+    "Google Business Profile (already claimed)",
+    "Yellow Pages UAE (yellowpages-uae.com)",
+    "Connect.ae",
+    "Dubai Chamber of Commerce directory",
+    "Zoho Marketplace Partners",
+    "Clutch.co — Dubai IT consulting category",
+    "LinkedIn Company Page (verify and complete)",
+    "Bayt.com Business directory",
+    "UAE-Online business listings",
+    "Trustpilot (B2B presence)"
+  ],
+
+  "common_search_intents_to_target": [
+    "Zoho partner Dubai",
+    "Zoho Books implementation UAE",
+    "Zoho consultant Dubai",
+    "Zoho training Dubai",
+    "Zoho Books certification Dubai",
+    "VAT-compliant accounting software UAE",
+    "Tally Prime training Dubai",
+    "Corporate Tax UAE Zoho",
+    "Zoho CRM implementation Dubai SME"
+  ]
+}
