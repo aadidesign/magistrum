@@ -198,22 +198,17 @@ export function ChatbotWidget() {
             className="relative px-4 py-3 sm:py-3.5 bg-gradient-to-br from-navy-800 to-navy-900 text-surface"
           >
             <div className="flex items-center gap-3">
-              <div className="relative flex-shrink-0">
+              <div className="flex-shrink-0">
                 <div className="w-10 h-10 rounded-full bg-gold-500/20 border border-gold-400/30 flex items-center justify-center">
                   <span className="font-serif text-gold-400 font-semibold text-lg leading-none">M</span>
                 </div>
-                <span
-                  className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-400 border-2 border-navy-800"
-                  aria-hidden
-                />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="font-serif text-base font-semibold flex items-center gap-1.5">
                   Magistrum Assistant
                   <ShieldCheck size={13} className="text-gold-400" aria-hidden />
                 </div>
-                <div className="text-[11px] text-surface/70 flex items-center gap-1.5">
-                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400" aria-hidden />
+                <div className="text-[11px] text-surface/70">
                   Online · Replies in seconds
                 </div>
               </div>
@@ -320,7 +315,7 @@ export function ChatbotWidget() {
             className="px-3 sm:px-4 py-2.5 bg-surface-warm/60 border-t border-border flex items-center justify-between gap-2 text-xs"
             style={{ paddingBottom: "max(0.625rem, env(safe-area-inset-bottom))" }}
           >
-            <span className="text-ink-muted">Need a faster reply?</span>
+            <span className="text-ink-muted">Prefer to talk to a person?</span>
             <a
               href={business.whatsapp.link()}
               target="_blank"
