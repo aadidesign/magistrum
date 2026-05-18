@@ -104,11 +104,11 @@ export function ChatbotWidget() {
         copy[copy.length - 1] = {
           role: "assistant",
           content:
-            "I'm having trouble reaching the knowledge base. You can WhatsApp us on " +
+            "Sorry, I couldn't get a reply just now. Please WhatsApp us on " +
             business.phone.primary.display +
             " or email " +
             business.email.general +
-            ". We usually reply within a working day.",
+            " and our team will get back to you within a working day.",
         };
         return copy;
       });

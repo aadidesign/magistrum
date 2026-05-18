@@ -49,6 +49,41 @@ def detect_soft_signal(message: str) -> bool:
     return any(r.search(message) for r in _SOFT)
 
 
+CANCEL_PATTERNS = [
+    r"^\s*stop\s*\.?$",
+    r"^\s*cancel\s*\.?$",
+    r"^\s*exit\s*\.?$",
+    r"^\s*quit\s*\.?$",
+    r"^\s*abort\s*\.?$",
+    r"^\s*nvm\s*\.?$",
+    r"\bnever\s*mind\b",
+    r"\bnot\s+now\b",
+    r"\bmaybe\s+later\b",
+    r"\bchanged?\s+my\s+mind\b",
+    r"\bdon'?t\s+want\s+to\s+book\b",
+    r"\bskip\s+this\b",
+    r"\bforget\s+it\b",
+]
+_CANCEL = [re.compile(p, re.IGNORECASE) for p in CANCEL_PATTERNS]
+
+
+def detect_cancel(message: str) -> bool:
+    return any(r.search(message) for r in _CANCEL)
+
+
+QUESTION_HINTS = [
+    r"\?",
+    r"\b(?:can|could|would|do|does|is|are|will)\s+(?:you|i|we|it)\b",
+    r"\b(?:what|when|where|how|why|which|who)\b",
+    r"\btell\s+me\s+about\b",
+]
+_QHINT = [re.compile(p, re.IGNORECASE) for p in QUESTION_HINTS]
+
+
+def looks_like_question(message: str) -> bool:
+    return any(r.search(message) for r in _QHINT)
+
+
 # ===== Validators =====
 
 EMAIL_FULL_RE = re.compile(r"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$")

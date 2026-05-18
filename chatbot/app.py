@@ -179,6 +179,34 @@ async def chat(req: ChatRequest):
 
     soft_signal = booking.detect_soft_signal(user_msg)
     intent_now = booking.detect_intent(user_msg)
+
+    # Escape hatch: if user wants to stop the booking flow, honour it immediately.
+    if s["in_booking_flow"] and booking.detect_cancel(user_msg):
+        partial = dict(s.get("booking") or {})
+        if any(partial.get(k) for k in ("name", "email", "phone", "company")):
+            asyncio.create_task(_save_partial_lead(req.session_id, partial, source="chatbot-booking-cancelled"))
+        s["in_booking_flow"] = False
+        s["booking"] = {}
+        s["asked_field"] = None
+        s["field_attempts"] = {}
+        reply = "No problem, I've stopped. Ask me anything else, or WhatsApp +971 58 899 1583 whenever you're ready."
+        s["history"].append({"role": "assistant", "content": reply})
+        asyncio.create_task(mongo.save_transcript(req.session_id, "assistant", reply))
+
+        async def stream_cancel():
+            for word in reply.split(" "):
+                yield word + " "
+                await asyncio.sleep(0.012)
+
+        return StreamingResponse(stream_cancel(), media_type="text/plain")
+
+    # Off-topic question mid-booking: pause the flow, answer via RAG, keep captured fields.
+    if s["in_booking_flow"] and booking.looks_like_question(user_msg):
+        asked = s.get("asked_field")
+        if not asked or not booking.extract_for_field(asked, user_msg):
+            s["in_booking_flow"] = False  # pause; partial data is preserved in s["booking"]
+            # fall through to the regular RAG path below
+
     if s["in_booking_flow"] or intent_now:
         if not s["in_booking_flow"]:
             s["in_booking_flow"] = True
